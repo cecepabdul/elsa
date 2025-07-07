@@ -814,40 +814,328 @@
             color: white;
         }
 
-        /* Responsive Design */
+        /* Enhanced Mobile Responsive Design */
         @media (max-width: 768px) {
-            .hero-names { font-size: 2.5rem; }
-            .section-title { font-size: 2rem; }
-            .countdown { 
-                grid-template-columns: repeat(4, 1fr); 
-                gap: 8px; 
+            /* Container and spacing adjustments */
+            .container { 
+                padding: 0 15px; 
                 max-width: 100%;
             }
-            .countdown-item { padding: 15px 10px; }
-            .countdown-number { font-size: 1.8rem; }
-            .countdown-label { font-size: 0.8rem; }
-            .couple-grid { grid-template-columns: 1fr; gap: 20px; }
-            .ampersand { margin: 20px auto; }
-            .gift-grid { grid-template-columns: 1fr; }
-            .modal-content { padding: 1.5rem; }
-            .section { padding: 40px 0; }
-            .combined-card { padding: 25px; margin: 1rem auto; }
             
-            /* Transfer section mobile responsive */
-            .gift-grid { grid-template-columns: 1fr; }
+            .section { 
+                padding: 40px 0; 
+            }
+            
+            /* Hero section mobile fixes */
+            .hero {
+                min-height: 100vh;
+                padding: 20px 0;
+            }
+            
+            .hero-names { 
+                font-size: 2.5rem; 
+                line-height: 1.2;
+                margin-bottom: 1rem;
+            }
+            
+            .hero img {
+                width: 300px !important;
+                height: 300px !important;
+                max-width: 90vw;
+                max-height: 90vw;
+            }
+            
+            /* Countdown mobile optimization */
+            .countdown { 
+                display: grid;
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 10px; 
+                max-width: 100%;
+                margin: 1.5rem auto;
+                padding: 0 10px;
+            }
+            
+            .countdown-item { 
+                padding: 15px 8px; 
+                min-height: 80px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .countdown-number { 
+                font-size: 1.8rem; 
+                line-height: 1;
+                margin-bottom: 5px;
+            }
+            
+            .countdown-label { 
+                font-size: 0.8rem; 
+                white-space: nowrap;
+            }
+            
+            /* Section titles */
+            .section-title { 
+                font-size: 2rem; 
+                margin-bottom: 1.5rem;
+            }
+            
+            /* Couple section mobile */
+            .couple-grid { 
+                grid-template-columns: 1fr; 
+                gap: 20px; 
+                text-align: center;
+            }
+            
+            .couple-avatar img {
+                width: 150px !important;
+                height: 150px !important;
+            }
+            
+            .ampersand { 
+                margin: 20px auto; 
+                width: 60px;
+                height: 60px;
+                font-size: 2rem;
+            }
+            
+            /* Cards and content */
+            .combined-card { 
+                padding: 25px 20px; 
+                margin: 1rem 10px; 
+            }
+            
+            .event-card {
+                padding: 30px 20px;
+                margin: 0 10px;
+            }
+            
+            .rsvp-form {
+                padding: 30px 20px;
+                margin: 0 10px;
+            }
+            
+            /* Modal mobile */
+            .modal-content { 
+                padding: 1.5rem; 
+                margin: 20px;
+                max-width: calc(100% - 40px);
+            }
+            
+            /* Button adjustments */
+            .btn { 
+                padding: 12px 25px; 
+                font-size: 1rem; 
+                white-space: nowrap;
+            }
+            
+            /* Arabic text mobile */
+            .arabic-text {
+                font-size: 1.4rem;
+                line-height: 1.4;
+            }
+            
+            /* Divider ornaments */
+            .divider-ornament {
+                padding: 8px 15px;
+                font-size: 1rem;
+            }
         }
 
         @media (max-width: 480px) {
-            .hero-names { font-size: 2rem; }
-            .section-title { font-size: 1.5rem; }
-            .countdown { gap: 6px; }
-            .countdown-item { padding: 12px 8px; }
-            .countdown-number { font-size: 1.5rem; }
-            .countdown-label { font-size: 0.7rem; }
-            .couple-name { font-size: 1.4rem; }
-            .container { padding: 0 15px; }
-            .combined-card { padding: 20px; }
-            .btn { padding: 12px 25px; font-size: 1rem; }
+            /* Extra small screens */
+            .container { 
+                padding: 0 10px; 
+            }
+            
+            .hero-names { 
+                font-size: 2rem; 
+                line-height: 1.1;
+            }
+            
+            .hero img {
+                width: 250px !important;
+                height: 250px !important;
+            }
+            
+            .section-title { 
+                font-size: 1.5rem; 
+            }
+            
+            /* Countdown extra mobile optimization */
+            .countdown { 
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px; 
+                margin: 1rem auto;
+                padding: 0 5px;
+            }
+            
+            .countdown-item { 
+                padding: 12px 6px; 
+                min-height: 70px;
+                border-radius: 10px;
+            }
+            
+            .countdown-number { 
+                font-size: 1.4rem; 
+            }
+            
+            .countdown-label { 
+                font-size: 0.7rem; 
+            }
+            
+            /* Couple section extra small */
+            .couple-name { 
+                font-size: 1.4rem; 
+                line-height: 1.2;
+            }
+            
+            .couple-avatar img {
+                width: 120px !important;
+                height: 120px !important;
+            }
+            
+            /* Cards extra small */
+            .combined-card { 
+                padding: 20px 15px; 
+                margin: 1rem 5px;
+            }
+            
+            .event-card {
+                padding: 25px 15px;
+                margin: 0 5px;
+            }
+            
+            .rsvp-form {
+                padding: 25px 15px;
+                margin: 0 5px;
+            }
+            
+            /* Button extra small */
+            .btn { 
+                padding: 10px 20px; 
+                font-size: 0.9rem; 
+            }
+            
+            /* Arabic text extra small */
+            .arabic-text {
+                font-size: 1.2rem;
+                line-height: 1.3;
+            }
+            
+            /* Modal extra small */
+            .modal-content {
+                padding: 1rem;
+                margin: 15px;
+            }
+            
+            /* Form elements mobile */
+            .form-input, .form-select, .form-textarea {
+                padding: 10px 12px;
+                font-size: 0.9rem;
+            }
+            
+            /* RSVP cards mobile */
+            .rsvp-card {
+                padding: 20px 15px;
+                margin-bottom: 15px;
+            }
+            
+            .rsvp-card-name {
+                font-size: 1.1rem;
+            }
+            
+            .rsvp-card-attendance {
+                font-size: 0.8rem;
+                padding: 4px 10px;
+            }
+            
+            /* Pagination mobile */
+            .pagination-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .pagination-btn {
+                padding: 8px 15px;
+                font-size: 0.8rem;
+            }
+            
+            .pagination-info {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+        }
+
+        /* Landscape mobile optimization */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .hero {
+                min-height: auto;
+                padding: 20px 0;
+            }
+            
+            .hero img {
+                width: 200px !important;
+                height: 200px !important;
+            }
+            
+            .countdown {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 8px;
+                max-width: 500px;
+            }
+            
+            .countdown-item {
+                padding: 10px 5px;
+                min-height: 60px;
+            }
+            
+            .countdown-number {
+                font-size: 1.3rem;
+            }
+            
+            .countdown-label {
+                font-size: 0.7rem;
+            }
+        }
+
+        /* Fix for very small screens */
+        @media (max-width: 320px) {
+            .hero-names {
+                font-size: 1.8rem;
+            }
+            
+            .hero img {
+                width: 200px !important;
+                height: 200px !important;
+            }
+            
+            .countdown {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 6px;
+            }
+            
+            .countdown-item {
+                padding: 10px 4px;
+                min-height: 60px;
+            }
+            
+            .countdown-number {
+                font-size: 1.2rem;
+            }
+            
+            .countdown-label {
+                font-size: 0.65rem;
+            }
+            
+            .section-title {
+                font-size: 1.3rem;
+            }
+            
+            .arabic-text {
+                font-size: 1rem;
+            }
         }
 
         /* RSVP Cards and Pagination Styles */
@@ -1571,6 +1859,7 @@
                     <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Terima Kasih!</h3>
                     <p>Ucapan dan doa Anda telah terkirim</p>
                 </div>
+                <h3>Ucapan yang Telah Masuk</h3>
                     <div id="rsvpResults" style="margin-top: 20px;"></div>
 
                 <div class="text-center mt-3 animate-fadeIn">
