@@ -845,34 +845,42 @@
                 max-height: 90vw;
             }
             
-            /* Countdown mobile optimization */
+            /* Countdown mobile optimization - Keep in single horizontal line */
             .countdown { 
-                display: grid;
-                grid-template-columns: repeat(2, 1fr); 
-                gap: 10px; 
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                align-items: center;
+                gap: 8px; 
                 max-width: 100%;
                 margin: 1.5rem auto;
-                padding: 0 10px;
+                padding: 0 15px;
+                overflow-x: auto;
             }
             
             .countdown-item { 
-                padding: 15px 8px; 
-                min-height: 80px;
+                flex: 1;
+                min-width: 0;
+                padding: 12px 6px; 
+                min-height: 75px;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+                border-radius: 12px;
             }
             
             .countdown-number { 
-                font-size: 1.8rem; 
+                font-size: 1.6rem; 
                 line-height: 1;
-                margin-bottom: 5px;
+                margin-bottom: 4px;
+                font-weight: bold;
             }
             
             .countdown-label { 
-                font-size: 0.8rem; 
+                font-size: 0.75rem; 
                 white-space: nowrap;
+                text-align: center;
             }
             
             /* Section titles */
@@ -963,26 +971,27 @@
                 font-size: 1.5rem; 
             }
             
-            /* Countdown extra mobile optimization */
+            /* Countdown extra mobile optimization - Keep horizontal */
             .countdown { 
-                grid-template-columns: repeat(2, 1fr);
-                gap: 8px; 
+                gap: 6px; 
                 margin: 1rem auto;
-                padding: 0 5px;
+                padding: 0 10px;
             }
             
             .countdown-item { 
-                padding: 12px 6px; 
-                min-height: 70px;
+                padding: 10px 4px; 
+                min-height: 65px;
                 border-radius: 10px;
             }
             
             .countdown-number { 
-                font-size: 1.4rem; 
+                font-size: 1.3rem; 
+                line-height: 1;
             }
             
             .countdown-label { 
-                font-size: 0.7rem; 
+                font-size: 0.65rem; 
+                line-height: 1.2;
             }
             
             /* Couple section extra small */
@@ -1081,22 +1090,22 @@
             }
             
             .countdown {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 8px;
+                gap: 10px;
                 max-width: 500px;
+                padding: 0 20px;
             }
             
             .countdown-item {
-                padding: 10px 5px;
-                min-height: 60px;
+                padding: 8px 4px;
+                min-height: 55px;
             }
             
             .countdown-number {
-                font-size: 1.3rem;
+                font-size: 1.2rem;
             }
             
             .countdown-label {
-                font-size: 0.7rem;
+                font-size: 0.65rem;
             }
         }
 
@@ -1112,21 +1121,23 @@
             }
             
             .countdown {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 6px;
+                gap: 4px;
+                padding: 0 8px;
             }
             
             .countdown-item {
-                padding: 10px 4px;
-                min-height: 60px;
+                padding: 8px 3px;
+                min-height: 55px;
             }
             
             .countdown-number {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
+                line-height: 1;
             }
             
             .countdown-label {
-                font-size: 0.65rem;
+                font-size: 0.6rem;
+                line-height: 1.1;
             }
             
             .section-title {
@@ -1859,7 +1870,6 @@
                     <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Terima Kasih!</h3>
                     <p>Ucapan dan doa Anda telah terkirim</p>
                 </div>
-                <h3>Ucapan yang Telah Masuk</h3>
                     <div id="rsvpResults" style="margin-top: 20px;"></div>
 
                 <div class="text-center mt-3 animate-fadeIn">
@@ -2252,9 +2262,7 @@
         
         // Open location in Google Maps
         function openLocation() {
-            const address = 'Kp. Cipanjak RT 2 RW 14, Cigugur girang, Parongpong, Kab. Bandung Barat';
-            const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
-            window.open(googleMapsUrl, '_blank');
+        window.open("https://maps.app.goo.gl/mqBHzuFEpZin6o6Q7", "_blank");
         }
         
         // Accordion functionality
