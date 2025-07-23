@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elsa & Wildan - Wedding Invitation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Elsa &amp; Wildan - Wedding Invitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&amp;family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
         * {
             margin: 0;
             padding: 0;
@@ -1457,444 +1458,390 @@
     </style>
 </head>
 <body>
-    <div class="bg-pattern"></div>
-
-    <!-- Background Music -->
-    <audio id="backgroundMusic" loop preload="auto">
-        <source src="src/backsound.mp3" type="audio/mpeg">
+<div class="bg-pattern"></div>
+<!-- Background Music -->
+<audio id="backgroundMusic" loop="" preload="auto">
+<source src="src/backsound.mp3" type="audio/mpeg"/>
         Your browser does not support the audio element.
     </audio>
-
-    <!-- Music Control Button (Optional) -->
-    <div id="musicControl" class="music-control hidden">
-        <button id="musicToggle" class="music-btn" onclick="toggleMusic()">
-            <i class="fas fa-pause" id="musicIcon"></i>
-        </button>
-    </div>
-
-    <!-- Welcome Modal -->
-    <div id="welcomeModal" class="modal">
-        <div class="modal-content animate-fadeIn">
-            <button class="close-btn" onclick="openInvitation()">
-                <i class="fas fa-times"></i>
-            </button>
-            
-            <div class="animate-float">
-                <i class="fas fa-heart" style="font-size: 3rem; color: var(--soft-pink); margin-bottom: 1rem;"></i>
-            </div>
-            
-            <h1 class="dancing-script" style="font-size: 2.5rem; color: var(--milk-chocolate); margin-bottom: 1rem;">
+<!-- Music Control Button (Optional) -->
+<div class="music-control hidden" id="musicControl">
+<button class="music-btn" id="musicToggle" onclick="toggleMusic()">
+<i class="fas fa-pause" id="musicIcon"></i>
+</button>
+</div>
+<!-- Welcome Modal -->
+<div class="modal" id="welcomeModal">
+<div class="modal-content animate-fadeIn">
+<button class="close-btn" onclick="openInvitation()">
+<i class="fas fa-times"></i>
+</button>
+<div class="animate-float">
+<i class="fas fa-heart" style="font-size: 3rem; color: var(--soft-pink); margin-bottom: 1rem;"></i>
+</div>
+<h1 class="dancing-script" style="font-size: 2.5rem; color: var(--milk-chocolate); margin-bottom: 1rem;">
                 Undangan Pernikahan
             </h1>
-            
-            <div style="width: 60px; height: 2px; background: var(--accent-gold); margin: 0 auto 1.5rem;"></div>
-            
-            <p style="color: var(--dark-chocolate); margin-bottom: 1rem; font-weight: 600;">
+<div style="width: 60px; height: 2px; background: var(--accent-gold); margin: 0 auto 1.5rem;"></div>
+<p style="color: var(--dark-chocolate); margin-bottom: 1rem; font-weight: 600;">
                 Kepada Yth:
             </p>
-            
-            <div style="background: rgba(255,255,255,0.7); padding: 15px; border-radius: 10px; margin-bottom: 2rem;">
-                <p id="guestNameDisplay" style="font-size: 1.2rem; font-weight: 600; color: var(--milk-chocolate);">
+<div style="background: rgba(255,255,255,0.7); padding: 15px; border-radius: 10px; margin-bottom: 2rem;">
+<p id="guestNameDisplay" style="font-size: 1.2rem; font-weight: 600; color: var(--milk-chocolate);">
                     Tamu Undangan
                 </p>
-            </div>
-            
-            <button class="btn animate-pulse" onclick="openInvitation()">
-                <i class="fas fa-envelope-open"></i>
+</div>
+<button class="btn animate-pulse" onclick="openInvitation()">
+<i class="fas fa-envelope-open"></i>
                 Buka Undangan
             </button>
-        </div>
-    </div>
-
-    <!-- Main Content -->
-    <div id="mainContent" class="hidden">
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <div class="animate-fadeIn">
-                    <div class="animate-float" style="margin-bottom: 2rem;">
-                        <i class="fas fa-rings-wedding" style="font-size: 4rem; color: var(--accent-gold);"></i>
-                    </div>
-                    <img src="src/elsa.png" alt="elsawildan" style="width:500px;height:500px;">
-                    <h1 class="hero-names dancing-script">Elsa & Wildan</h1>
-                    
-                    <div style="width: 100px; height: 3px; background: var(--accent-gold); margin: 0 auto 2rem;"></div>
-                    
-                    <div class="container">
-                <div class="animate-slideIn">
-                    <div class="countdown" id="countdown">
-                        <div class="countdown-item">
-                            <span class="countdown-number" id="days">00</span>
-                            <span class="countdown-label">Hari</span>
-                        </div>
-                        <div class="countdown-item">
-                            <span class="countdown-number" id="hours">00</span>
-                            <span class="countdown-label">Jam</span>
-                        </div>
-                        <div class="countdown-item">
-                            <span class="countdown-number" id="minutes">00</span>
-                            <span class="countdown-label">Menit</span>
-                        </div>
-                        <div class="countdown-item">
-                            <span class="countdown-number" id="seconds">00</span>
-                            <span class="countdown-label">Detik</span>
-                        </div>
-                    </div>
-                    
-                    <div class="text-center mt-3">
-                        <h2 style="font-size: 1rem; color: var(--milk-chocolate); font-weight: bold; margin-bottom: 1rem;">
+</div>
+</div>
+<!-- Main Content -->
+<div class="hidden" id="mainContent">
+<!-- Hero Section -->
+<section class="hero" style="background-image: url('src/bg.jpg'); background-size: cover; background-position: center;">
+<div class="container">
+<div class="animate-fadeIn">
+<div class="animate-float" style="margin-bottom: 2rem;">
+<i class="fas fa-rings-wedding" style="font-size: 4rem; color: var(--accent-gold);"></i>
+</div>
+<img alt="elsawildan" src="src/elsa.png" style="width:500px;height:500px;"/>
+<h1 class="hero-names dancing-script">Elsa &amp; Wildan</h1>
+<div style="width: 100px; height: 3px; background: var(--accent-gold); margin: 0 auto 2rem;"></div>
+<div class="container">
+<div class="animate-slideIn">
+<div class="countdown" id="countdown">
+<div class="countdown-item">
+<span class="countdown-number" id="days">00</span>
+<span class="countdown-label">Hari</span>
+</div>
+<div class="countdown-item">
+<span class="countdown-number" id="hours">00</span>
+<span class="countdown-label">Jam</span>
+</div>
+<div class="countdown-item">
+<span class="countdown-number" id="minutes">00</span>
+<span class="countdown-label">Menit</span>
+</div>
+<div class="countdown-item">
+<span class="countdown-number" id="seconds">00</span>
+<span class="countdown-label">Detik</span>
+</div>
+</div>
+<div class="text-center mt-3">
+<h2 style="font-size: 1rem; color: var(--milk-chocolate); font-weight: bold; margin-bottom: 1rem;">
                             SENIN, 8 SEPTEMBER 2025
                         </h2>
-                        
-                        <button class="btn" onclick="saveToCalendar()">
-                            <i class="fas fa-calendar-plus"></i>
+<button class="btn" onclick="saveToCalendar()">
+<i class="fas fa-calendar-plus"></i>
                             Save Google Calendar
                         </button>
-                    </div>
-                </div>
-            </div>
-                    
-                    <div class="animate-bounce" style="margin-top: 3rem;">
-                        <i class="fas fa-chevron-down" style="font-size: 1.5rem; color: var(--milk-chocolate);"></i>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Quote Section -->
-        <section class="quote-section section">
-            <div class="container">
-                <div class="quote-content animate-fadeIn">
-                    <div style="font-size: 3rem; margin-bottom: 2rem;">
-                        <i class="fas fa-quote-left" style="color: rgba(255,255,255,0.3);"></i>
-                    </div>
-                    
-                    <p style="font-size: 1.3rem; margin-bottom: 1.5rem; line-height: 1.8;">
+</div>
+</div>
+</div>
+<div class="animate-bounce" style="margin-top: 3rem;">
+<i class="fas fa-chevron-down" style="font-size: 1.5rem; color: var(--milk-chocolate);"></i>
+</div>
+</div>
+</div>
+</section>
+<!-- Quote Section -->
+<section class="quote-section section">
+<div class="container">
+<div class="quote-content animate-fadeIn">
+<div style="font-size: 3rem; margin-bottom: 2rem;">
+<i class="fas fa-quote-left" style="color: rgba(255,255,255,0.3);"></i>
+</div>
+<p style="font-size: 0.8rem; margin-bottom: 2rem; line-height: 1.8;">
                         "Dan Diantara tanda-tanda kebesaran-Nya ialah diciptakan-Nya untukmu pasangan hidup dari jenismu sendiri supaya kamu mendapatkan ketenangan hati dan dijadikan-Nya kasih sayang diantara kamu. Sesungguhnya yang demikian itu menjadi tanda-tanda kebesaran-Nya bagi orang-orang yang berfikir"
                     </p>
-    
-                    <p style="font-weight: 600; color: rgba(255,255,255,0.8);">
+<p style="font-weight: 300; color: rgba(255,255,255,0.8);">
                         (QS. Ar-Ruum: 21)
                     </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Animated Divider -->
-        <div class="section-divider">
-            <div class="divider-line"></div>
-            <div class="divider-ornament">
-                <i class="fas fa-heart"></i>
-            </div>
-        </div>
-
-        <!-- Combined Islamic Greeting and Couple Section -->
-        <section class="section">
-            <div class="container">
-                <div class="combined-card animate-fadeIn">
-                    <!-- Islamic Greeting -->
-                    <div class="text-center" style="margin-bottom: 3rem;">
-                        <div class="arabic-text">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
-                        <div class="arabic-text">السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</div>
-                        <p style="margin-top: 1.5rem; color: var(--dark-chocolate); font-size: 1.1rem; line-height: 1.6;">
+</div>
+</div>
+</section>
+<!-- Animated Divider -->
+<div class="section-divider">
+<div class="divider-line"></div>
+<div class="divider-ornament">
+<i class="fas fa-heart"></i>
+</div>
+</div>
+<!-- Combined Islamic Greeting and Couple Section -->
+<section class="section">
+<div class="container">
+<div class="combined-card animate-fadeIn">
+<!-- Islamic Greeting -->
+<div class="text-center" style="font-size: 1.5rem; margin-bottom: 3rem;">
+<div class="arabic-text">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+<div class="arabic-text">السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</div>
+<p style="margin-top: 1.5rem; color: var(--dark-chocolate); font-size: 1.1rem; line-height: 1.6;">
                             Tanpa mengurangi rasa hormat, kami mengundang Anda untuk berkenan menghadiri acara pernikahan kami:
                         </p>
-                    </div>
-
-                    <!-- Couple Information -->
-                    <div class="couple-grid animate-slideIn">
-                        <!-- Bride -->
-                        <div class="couple-card" style="background: rgba(139, 69, 19, 0.05); border: 2px solid var(--accent-gold);">
-                            <div class="couple-avatar">
-                                <img src="src/eca.png" alt="HTML5 Icon" style="width:200px;height:200px;">
-                            </div>
-                            <h3 class="couple-name dancing-script">Elsa Halimatusyadiah</h3>
-                            <div style="width: 50px; height: 2px; background: var(--accent-gold); margin: 0 auto 15px;"></div>
-                            <p style="font-weight: 600; color: var(--dark-chocolate); margin-bottom: 5px;">Putri dari Bapak Wawan Hermawan dan Ibu Ai Suryani</p>
-                        </div>
-                        
-                        <!-- Ampersand -->
-                        <div class="ampersand animate-pulse dancing-script">&</div>
-                        
-                        <!-- Groom -->
-                        <div class="couple-card" style="background: rgba(139, 69, 19, 0.05); border: 2px solid var(--accent-gold);">
-                            <div class="couple-avatar">
-                                <img src="src/wildan.png" alt="HTML5 Icon" style="width:200px;height:200px;">
-                            </div>
-                            <h3 class="couple-name dancing-script">Wildan Farhan Jaelani</h3>
-                            <div style="width: 50px; height: 2px; background: var(--accent-gold); margin: 0 auto 15px;"></div>
-                            <p style="font-weight: 600; color: var(--dark-chocolate); margin-bottom: 5px;">Putra dari Bapak Jejen Jaelani dan Ibu Santi Kusmiati</p>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </section>
-
-        <!-- Animated Divider -->
-        <div class="section-divider">
-            <div class="divider-line"></div>
-            <div class="divider-ornament">
-                <i class="fas fa-rings-wedding"></i>
-            </div>
-        </div>
-
-        <!-- Event Section -->
-        <section class="section">
-            <div class="container">
-                <div class="event-card animate-fadeIn">
-                    <!-- Wedding Announcement -->
-                    <div style="margin-bottom: 3rem;">
-                        <p style="font-size: 1.2rem; margin-bottom: 2rem; line-height: 1.8;">
+</div>
+<!-- Couple Information -->
+<div class="couple-grid animate-slideIn">
+<!-- Bride -->
+<div class="couple-card" style="background: rgba(139, 69, 19, 0.05); border: 2px solid var(--accent-gold);">
+<div class="couple-avatar">
+<img alt="HTML5 Icon" src="src/eca.png" style="width:200px;height:200px;"/>
+</div>
+<h3 class="couple-name dancing-script">Elsa Halimatusyadiah</h3>
+<div style="width: 50px; height: 2px; background: var(--accent-gold); margin: 0 auto 15px;"></div>
+<p style="font-weight: 600; color: var(--dark-chocolate); margin-bottom: 5px;">Putri dari Bapak Wawan Hermawan dan Ibu Ai Suryani</p>
+</div>
+<!-- Ampersand -->
+<div class="ampersand animate-pulse dancing-script">&amp;</div>
+<!-- Groom -->
+<div class="couple-card" style="background: rgba(139, 69, 19, 0.05); border: 2px solid var(--accent-gold);">
+<div class="couple-avatar">
+<img alt="HTML5 Icon" src="src/wildan.png" style="width:200px;height:200px;"/>
+</div>
+<h3 class="couple-name dancing-script">Wildan Farhan Jaelani</h3>
+<div style="width: 50px; height: 2px; background: var(--accent-gold); margin: 0 auto 15px;"></div>
+<p style="font-weight: 600; color: var(--dark-chocolate); margin-bottom: 5px;">Putra dari Bapak Jejen Jaelani dan Ibu Santi Kusmiati</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Animated Divider -->
+<div class="section-divider">
+<div class="divider-line"></div>
+<div class="divider-ornament">
+<i class="fas fa-rings-wedding"></i>
+</div>
+</div>
+<!-- Event Section -->
+<section class="section">
+<div class="container">
+<div class="event-card animate-fadeIn">
+<!-- Wedding Announcement -->
+<div style="margin-bottom: 3rem;">
+<p style="font-size: 1rem; margin-bottom: 2rem; line-height: 1.8;">
                             Dengan memohon rahmat dan ridho Allah SWT, serta mengucap rasa syukur atas karunia Allah SWT, Kami hendak menyampaikan kabar bahagia pernikahan Kami. Yang Insya Allah akan dilaksanakan :
                         </p>
-                        
-                        <h3 class="dancing-script" style="font-size: 3rem; margin-bottom: 1rem;">Akad Nikah</h3>
-                        
-                        <!-- Separator -->
-                        <div style="margin: 2rem 0; display: flex; align-items: center; justify-content: center;">
-                            <div style="flex: 1; height: 1px; background: rgba(255,255,255,0.3);"></div>
-                            <span style="font-size: 1rem; color: rgba(255,255,255,0.7); margin: 0 1rem; font-style: italic;">dilanjut dengan</span>
-                            <div style="flex: 1; height: 1px; background: rgba(255,255,255,0.3);"></div>
-                        </div>
-                        
-                        <h3 class="dancing-script" style="font-size: 3rem; margin-bottom: 2rem;">Resepsi</h3>
-                    </div>
-                    
-                    <div style="margin-bottom: 2rem;">
-                        <i class="fas fa-calendar-alt" style="font-size: 3rem; margin-bottom: 1rem; color: var(--accent-gold);"></i>
-                        <h3 style="font-size: 2rem; margin-bottom: 1rem;">Senin, 8 September 2025</h3>
-                        <p style="font-size: 1.5rem; font-weight: 600;">08:00 - SELESAI</p>
-                    </div>
-                    
-                    <div style="margin-bottom: 2rem;">
-                        <i class="fas fa-home" style="font-size: 2rem; margin-bottom: 1rem; color: var(--accent-gold);"></i>
-                        <h4 style="font-size: 1.3rem; margin-bottom: 1rem; color: rgba(255,255,255,0.9);">
+<h3 class="dancing-script" style="font-size: 3rem; margin-bottom: 1rem;">Akad Nikah</h3>
+<!-- Separator -->
+<div style="margin: 2rem 0; display: flex; align-items: center; justify-content: center;">
+<div style="flex: 1; height: 1px; background: rgba(255,255,255,0.3);"></div>
+<span style="font-size: 1rem; color: rgba(255,255,255,0.7); margin: 0 1rem; font-style: italic;">dilanjut dengan</span>
+<div style="flex: 1; height: 1px; background: rgba(255,255,255,0.3);"></div>
+</div>
+<h3 class="dancing-script" style="font-size: 3rem; margin-bottom: 2rem;">Resepsi</h3>
+</div>
+<div style="margin-bottom: 2rem;">
+<i class="fas fa-calendar-alt" style="font-size: 3rem; margin-bottom: 1rem; color: var(--accent-gold);"></i>
+<h3 style="font-size: 1.3rem; margin-bottom: 1rem;">Senin, 8 September 2025</h3>
+<p style="font-size: 1.1rem; font-weight: 600;">08:00 - SELESAI</p>
+</div>
+<div style="margin-bottom: 2rem;">
+<i class="fas fa-home" style="font-size: 2rem; margin-bottom: 1rem; color: var(--accent-gold);"></i>
+<h4 style="font-size: 1.3rem; margin-bottom: 1rem; color: rgba(255,255,255,0.9);">
                             Di Kediaman Pempelai Wanita
                         </h4>
-                        <p style="font-size: 1.1rem; line-height: 1.6;">
+<p style="font-size: 1rem; line-height: 1.6;">
                             Kp. Cipanjak RT 2 RW 14, Cigugur girang, Parongpong, Kab. Bandung Barat
                         </p>
-                    </div>
-                    
-                    <button class="btn" onclick="openLocation()">
-                        <i class="fas fa-map-marker-alt"></i>
+</div>
+<button class="btn" onclick="openLocation()">
+<i class="fas fa-map-marker-alt"></i>
                         Lihat Lokasi
                     </button>
-                    <br>
-                        <p style="color: white; line-height: 1.6;">
+<br/>
+<p style="color: white; line-height: 1.6;">
                             Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan do'a restu kepada kedua mempelai.
                         </p>
-                </div>
-                
-            </div>
-        </section>
-
-        <!-- Animated Divider -->
-        <div class="section-divider">
-            <div class="divider-line"></div>
-            <div class="divider-ornament">
-                <i class="fas fa-gift"></i>
-            </div>
-        </div>
-
-        <!-- Gift Section -->
-        <section class="section">
-            <div class="container">
-                <h2 class="section-title dancing-script">Love Gift</h2>
-                
-                <div class="text-center mb-3 animate-fadeIn">
-                    <p style="font-size: 1.1rem; color: white; max-width: 600px; margin: 0 auto; line-height: 1.6;">
+</div>
+</div>
+</section>
+<!-- Animated Divider -->
+<div class="section-divider">
+<div class="divider-line"></div>
+<div class="divider-ornament">
+<i class="fas fa-gift"></i>
+</div>
+</div>
+<!-- Gift Section -->
+<section class="section">
+<div class="container">
+<h2 class="section-title dancing-script">Love Gift</h2>
+<div class="text-center mb-3 animate-fadeIn">
+<p style="font-size: 1.1rem; color: white; max-width: 600px; margin: 0 auto; line-height: 1.6;">
                         Doa Restu Anda merupakan karunia yang sangat berarti bagi kami. Dan jika memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi kado secara cashless.
                     </p>
-                </div>
-                
-                <!-- Gift Accordion -->
-                <div class="gift-accordion animate-slideIn">
-                    <!-- Transfer Bank Accordion Item -->
-                    <div class="accordion-item">
-                        <div class="accordion-header" onclick="toggleAccordion('bank')">
-                            <div class="accordion-title">
-                                <i class="fas fa-university accordion-icon"></i>
+</div>
+<!-- Gift Accordion -->
+<div class="gift-accordion animate-slideIn">
+<!-- Transfer Bank Accordion Item -->
+<div class="accordion-item">
+<div class="accordion-header" onclick="toggleAccordion('bank')">
+<div class="accordion-title">
+<i class="fas fa-university accordion-icon"></i>
                                 Transfer Bank
                             </div>
-                            <i class="fas fa-chevron-down accordion-chevron" id="bank-chevron"></i>
-                        </div>
-                        <div class="accordion-content" id="bank-content">
-                            <div class="accordion-content-inner">
-                                <div class="bank-info">
-                                    <div class="bank-details">
-                                        <div class="bank-name">
-                                            <i class="fas fa-building"></i>
-                                            Bank Central Asia (BCA)
+<i class="fas fa-chevron-down accordion-chevron" id="bank-chevron"></i>
+</div>
+<div class="accordion-content" id="bank-content">
+<div class="accordion-content-inner">
+<div class="bank-info">
+<div class="bank-details">
+<div class="bank-name">
+<i class="fas fa-building"></i>
+                                            Bank Blu BY BCA DIGITAL
                                         </div>
-                                        <div class="account-holder">a.n. Elsa & Wildan</div>
-                                        <div class="account-number">1234567890</div>
-                                    </div>
-                                    <button class="copy-btn" onclick="copyToClipboard('1234567890', 'bank')">
-                                        <i class="fas fa-copy"></i>
-                                        <span id="copy-text-bank">Salin Nomor</span>
-                                    </button>
-                                </div>
-                                <p style="text-align: center; color: var(--dark-chocolate); font-style: italic;">
-                                    Silakan transfer ke rekening di atas dan konfirmasi melalui WhatsApp
+<div class="account-holder">a.n. Elsa Halimatu Syadiah</div>
+<div class="account-number">0068 4384 3667</div>
+</div>
+<button class="copy-btn" onclick="copyToClipboard('006843843667', 'bank')">
+<i class="fas fa-copy"></i>
+<span id="copy-text-bank">Salin Nomor</span>
+</button>
+</div>
+<p style="text-align: center; color: var(--dark-chocolate); font-style: italic;">
+                                    Silakan transfer ke rekening di atas 
                                 </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- QRIS Accordion Item -->
-                    <div class="accordion-item">
-                        <div class="accordion-header" onclick="toggleAccordion('qris')">
-                            <div class="accordion-title">
-                                <i class="fas fa-qrcode accordion-icon"></i>
+</div>
+</div>
+</div>
+<!-- QRIS Accordion Item -->
+<div class="accordion-item">
+<div class="accordion-header" onclick="toggleAccordion('qris')">
+<div class="accordion-title">
+<i class="fas fa-qrcode accordion-icon"></i>
                                 QRIS
                             </div>
-                            <i class="fas fa-chevron-down accordion-chevron" id="qris-chevron"></i>
-                        </div>
-                        <div class="accordion-content" id="qris-content">
-                            <div class="accordion-content-inner">
-                                <div class="qris-container">
-                                    <div class="qris-image">
-                                        <img src="src/dummy-qris.png" alt="QRIS Code" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;" 
-                                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                        <div style="display: none; flex-direction: column; align-items: center; gap: 10px;">
-                                            <i class="fas fa-qrcode"></i>
-                                            <span style="font-size: 1rem;">QR Code</span>
-                                        </div>
-                                    </div>
-                                    <div class="qris-info">
-                                        <p><strong>Scan QR Code di atas</strong></p>
-                                        <p>Untuk pembayaran digital melalui aplikasi mobile banking, e-wallet, atau aplikasi pembayaran lainnya yang mendukung QRIS</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Kirim Kado Accordion Item -->
-                    <div class="accordion-item">
-                        <div class="accordion-header" onclick="toggleAccordion('gift')">
-                            <div class="accordion-title">
-                                <i class="fas fa-gift accordion-icon"></i>
+<i class="fas fa-chevron-down accordion-chevron" id="qris-chevron"></i>
+</div>
+<div class="accordion-content" id="qris-content">
+<div class="accordion-content-inner">
+<div class="qris-container">
+<div class="qris-image">
+<img alt="QRIS Code" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="src/qris.jpg" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;"/>
+<div style="display: none; flex-direction: column; align-items: center; gap: 10px;">
+<i class="fas fa-qrcode"></i>
+<span style="font-size: 1rem;">QR Code</span>
+</div>
+</div>
+<div class="qris-info">
+<p><strong>Scan QR Code di atas</strong></p>
+<p>Hanya berlaku untuk e-wallet Dana</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Kirim Kado Accordion Item -->
+<div class="accordion-item">
+<div class="accordion-header" onclick="toggleAccordion('gift')">
+<div class="accordion-title">
+<i class="fas fa-gift accordion-icon"></i>
                                 Kirim Kado
                             </div>
-                            <i class="fas fa-chevron-down accordion-chevron" id="gift-chevron"></i>
-                        </div>
-                        <div class="accordion-content" id="gift-content">
-                            <div class="accordion-content-inner">
-                                <div class="address-container">
-                                    <div class="address-title">
-                                        <i class="fas fa-map-marker-alt"></i>
+<i class="fas fa-chevron-down accordion-chevron" id="gift-chevron"></i>
+</div>
+<div class="accordion-content" id="gift-content">
+<div class="accordion-content-inner">
+<div class="address-container">
+<div class="address-title">
+<i class="fas fa-map-marker-alt"></i>
                                         Alamat Pengiriman Kado
                                     </div>
-                                    <div class="address-text">
-                                        <strong>Elsa & Wildan</strong><br>
-                                        Kp. Cipanjak RT 2 RW 14<br>
-                                        Cigugur Girang, Parongpong<br>
-                                        Kabupaten Bandung Barat<br>
-                                        Jawa Barat 40559<br>
-                                        <strong>Indonesia</strong>
-                                    </div>
-                                </div>
-                                <p style="text-align: center; color: var(--dark-chocolate); font-style: italic; margin-top: 15px;">
+<div class="address-text">
+<strong>Elsa &amp; Wildan</strong><br/>
+                                        Kp. Cipanjak RT 2 RW 14<br/>
+                                        Cigugur Girang, Parongpong<br/>
+                                        Kabupaten Bandung Barat<br/>
+                                        Jawa Barat 40559<br/>
+<strong>Indonesia</strong>
+</div>
+</div>
+<p style="text-align: center; color: var(--dark-chocolate); font-style: italic; margin-top: 15px;">
                                     Mohon sertakan nama pengirim pada paket kado
                                 </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-
-            </div>
-        </section>
-
-        <!-- Animated Divider -->
-        <div class="section-divider">
-            <div class="divider-line"></div>
-            <div class="divider-ornament">
-                <i class="fas fa-comments"></i>
-            </div>
-        </div>
-
-        <!-- RSVP Section -->
-        <section class="section">
-            <div class="container">
-                <h2 class="section-title dancing-script">Ucapan dan Doa</h2>
-                
-                <div class="text-center mb-3">
-                    <p style="color: var(--dark-chocolate);">Berikan ucapan dan doa terbaik untuk kedua mempelai</p>
-                </div>
-                
-                <div class="rsvp-form animate-fadeIn" id="rsvpForm">
-                    <form onsubmit="submitRSVP(event)">
-                        <div class="form-group">
-                            <label class="form-label">
-                                <i class="fas fa-user" style="margin-right: 8px;"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Animated Divider -->
+<div class="section-divider">
+<div class="divider-line"></div>
+<div class="divider-ornament">
+<i class="fas fa-comments"></i>
+</div>
+</div>
+<!-- RSVP Section -->
+<section class="section">
+<div class="container">
+<h2 class="section-title dancing-script">Ucapan dan Doa</h2>
+<div class="text-center mb-3">
+<p style="color: var(--dark-chocolate);">Berikan ucapan dan doa terbaik untuk kedua mempelai</p>
+</div>
+<div class="rsvp-form animate-fadeIn" id="rsvpForm">
+<form onsubmit="submitRSVP(event)">
+<div class="form-group">
+<label class="form-label">
+<i class="fas fa-user" style="margin-right: 8px;"></i>
                                 Nama Lengkap
                             </label>
-                            <input type="text" class="form-input" id="guestName" placeholder="Masukkan nama lengkap Anda" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">
-                                <i class="fas fa-calendar-check" style="margin-right: 8px;"></i>
+<input class="form-input" id="guestName" placeholder="Masukkan nama lengkap Anda" required="" type="text"/>
+</div>
+<div class="form-group">
+<label class="form-label">
+<i class="fas fa-calendar-check" style="margin-right: 8px;"></i>
                                 Hadir / Tidak Hadir
                             </label>
-                            <select class="form-select" id="attendance" required>
-                                <option value="">Pilih kehadiran</option>
-                                <option value="hadir">Hadir</option>
-                                <option value="tidak-hadir">Tidak Hadir</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">
-                                <i class="fas fa-heart" style="margin-right: 8px;"></i>
+<select class="form-select" id="attendance" required="">
+<option value="">Pilih kehadiran</option>
+<option value="hadir">Hadir</option>
+<option value="tidak-hadir">Tidak Hadir</option>
+</select>
+</div>
+<div class="form-group">
+<label class="form-label">
+<i class="fas fa-heart" style="margin-right: 8px;"></i>
                                 Ucapan dan Doa
                             </label>
-                            <textarea class="form-textarea" id="message" placeholder="Tuliskan ucapan dan doa terbaik untuk kedua mempelai..."></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn" style="width: 100%;" id="submitBtn">
-                            <i class="fas fa-paper-plane"></i>
+<textarea class="form-textarea" id="message" placeholder="Tuliskan ucapan dan doa terbaik untuk kedua mempelai..."></textarea>
+</div>
+<button class="btn" id="submitBtn" style="width: 100%;" type="submit">
+<i class="fas fa-paper-plane"></i>
                             Send
                         </button>
-                    </form>
-                </div>
-                
-                <div class="success-message hidden" id="successMessage">
-                    <div class="success-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Terima Kasih!</h3>
-                    <p>Ucapan dan doa Anda telah terkirim</p>
-                </div>
-                    <div id="rsvpResults" style="margin-top: 20px;"></div>
-
-                <div class="text-center mt-3 animate-fadeIn">
-                    <p style="color: white; margin-bottom: 1.5rem; line-height: 1.6;">
+</form>
+</div>
+<div class="success-message hidden" id="successMessage">
+<div class="success-icon">
+<i class="fas fa-check"></i>
+</div>
+<h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Terima Kasih!</h3>
+<p>Ucapan dan doa Anda telah terkirim</p>
+</div>
+<div id="rsvpResults" style="margin-top: 20px;"></div>
+<div class="text-center mt-3 animate-fadeIn">
+<p style="color: white; margin-bottom: 1.5rem; line-height: 1.6;">
                         Terima kasih atas perhatian dan doa restu Anda, yang menjadi kebahagiaan serta kehormatan besar bagi kami.
                     </p>
-                    
-                    <div class="arabic-text" style="color: white">
+<div class="arabic-text" style="font-size: 1.5rem; color: white">
                         وَعَلَيْكُمُ السَّلاَمُ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ
                     </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 20px;">
-                <p style="opacity: 0.8;">© 2025 Elsa & Wildan Wedding Invitation</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer -->
+<footer class="footer">
+<div class="container">
+<div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 20px;">
+<p style="opacity: 0.8;">© 2025 Elsa &amp; Wildan Wedding Invitation</p>
+</div>
+</div>
+</footer>
+<script>
         // Google Apps Script Web App URL
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwznJz6XpeGsQ4iPzi5UeVW3BELutE_P5oPlCG198oohpsa1voS-192CZMaGFb4xXrvLw/exec";
 
